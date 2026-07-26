@@ -2,6 +2,7 @@ package com.mindpallas.core;
 
 import com.mindpallas.leetcode.LeetCodeRegistry;
 import com.mindpallas.leetcode.math.MaxProductTask;
+import com.mindpallas.leetcode.math.MaximumProductOfThreeNumbers;
 import com.mindpallas.leetcode.strings.TokenizerTask;
 import com.mindpallas.leetcode.arrays.TwoSumTask;
 import com.mindpallas.leetcode.strings.ReverseStringTask;
@@ -12,6 +13,7 @@ public class App {
         // Register tasks
         LeetCodeRegistry.register(new MaxProductTask());
         LeetCodeRegistry.register(new TokenizerTask());
+        LeetCodeRegistry.register(new MaximumProductOfThreeNumbers());
         LeetCodeRegistry.register(new TwoSumTask());
         LeetCodeRegistry.register(new ReverseStringTask());
 
