@@ -1,27 +1,99 @@
 package com.mindpallas.leetcode;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
+import com.mindpallas.core.LeetCodeTaskRegistry;
 
-public final class LeetCodeRegistry {
+// -------------------------
+// Arrays
+// -------------------------
+import com.mindpallas.leetcode.arrays.MaximumProductOfTwoElementsTask;
+import com.mindpallas.leetcode.arrays.TwoSumTask;
 
-    private static final Map<String, LeetCodeTask> tasks = new LinkedHashMap<>();
+// -------------------------
+// Math
+// -------------------------
+import com.mindpallas.leetcode.math.MaxProductOfTwoDigitsTask;
 
-    public static void register(LeetCodeTask task) {
-        tasks.put(task.name(), task);
-    }
+// -------------------------
+// Strings
+// -------------------------
+import com.mindpallas.leetcode.strings.ReverseStringTask;
+import com.mindpallas.leetcode.strings.TokenizerTask;
 
-    public static void run(String name) {
-        var task = tasks.get(name);
-        if (task == null) {
-            System.out.println("Task not found: " + name);
-            return;
-        }
-        task.run();
-    }
+// -------------------------
+// Dynamic Programming (dp)
+// -------------------------
+// (weitere Tasks bei Bedarf)
+// import com.mindpallas.leetcode.dp.SomeDpTask;
 
-    public static void list() {
-        System.out.println("Registered LeetCode tasks:");
-        tasks.keySet().forEach(System.out::println);
+// -------------------------
+// Graph
+// -------------------------
+// import com.mindpallas.leetcode.graph.SomeGraphTask;
+
+// -------------------------
+// Greedy
+// -------------------------
+// import com.mindpallas.leetcode.greedy.SomeGreedyTask;
+
+// -------------------------
+// Tree
+// -------------------------
+// import com.mindpallas.leetcode.tree.SomeTreeTask;
+
+// -------------------------
+// Misc
+// -------------------------
+// import com.mindpallas.leetcode.misc.SomeMiscTask;
+
+/**
+ * Zentrale Registry für alle LeetCode-Tasks in MindPallas.
+ * Jede neue Aufgabe MUSS hier registriert werden,
+ * damit sie im System sichtbar und ausführbar ist.
+ */
+public class LeetCodeRegistry {
+
+    public void registerAll(LeetCodeTaskRegistry registry) {
+
+        // -------------------------
+        // Arrays
+        // -------------------------
+        registry.register(new MaximumProductOfTwoElementsTask());
+        registry.register(new TwoSumTask());
+
+        // -------------------------
+        // Math
+        // -------------------------
+        registry.register(new MaxProductOfTwoDigitsTask());
+
+        // -------------------------
+        // Strings
+        // -------------------------
+        registry.register(new ReverseStringTask());
+        registry.register(new TokenizerTask());
+
+        // -------------------------
+        // Dynamic Programming (dp)
+        // -------------------------
+        // registry.register(new SomeDpTask());
+
+        // -------------------------
+        // Graph
+        // -------------------------
+        // registry.register(new SomeGraphTask());
+
+        // -------------------------
+        // Greedy
+        // -------------------------
+        // registry.register(new SomeGreedyTask());
+
+        // -------------------------
+        // Tree
+        // -------------------------
+        // registry.register(new SomeTreeTask());
+
+        // -------------------------
+        // Misc
+        // -------------------------
+        // registry.register(new SomeMiscTask());
     }
 }
